@@ -133,44 +133,49 @@ $(document).ready(function () {
   }
 
   if ($(".clients-slider").length) {
-    $(".clients-slider").slick({
-      slidesToShow: 6,
-      slidesToScroll: 1,
-      arrows: false,
-      dots: false,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 0,
-      speed: 5000,
-      cssEase: "linear",
-      pauseOnHover: true,
-      pauseOnFocus: false,
-      draggable: false,
-      swipe: false,
-      touchMove: false,
-      variableWidth: true,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 4,
-          },
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 3,
-          },
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 2,
-          },
-        },
-      ],
-    });
-  }
+  const clientSlider = $(".clients-slider");
+
+  clientSlider.slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 1, // 🔥 FIX
+    speed: 5000,
+    cssEase: "linear",
+    pauseOnHover: false, // 👈 tắt cái này
+    pauseOnFocus: false,
+    draggable: false,
+    swipe: false,
+    touchMove: false,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 4 },
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 3 },
+      },
+      {
+        breakpoint: 480,
+        settings: { slidesToShow: 2 },
+      },
+    ],
+  });
+
+  // 🔥 HANDLE HOVER THỦ CÔNG
+  clientSlider.on("mouseenter", function () {
+    $(this).slick("slickPause");
+  });
+
+  clientSlider.on("mouseleave", function () {
+    $(this).slick("slickPlay");
+  });
+}
 
   if ($(".testimonial-slider").length) {
     $(".testimonial-slider").slick({
