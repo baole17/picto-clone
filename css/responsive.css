@@ -34,7 +34,7 @@
   }
 
   .hero-content {
-     order: 1;
+     
     text-align: center;
   }
 
@@ -56,7 +56,6 @@
   }
 
   .hero-media {
-     order: 0;
     justify-content: center;
   }
 
@@ -140,88 +139,6 @@
   }
 }
 
-@media (max-width: 767px) {
-  .container {
-    width: min(100% - 32px, 1320px);
-  }
-
-  .section,
-  .portfolio-section,
-  .blog-section,
-  .services-section {
-    padding: 72px 0;
-  }
-
-  .clients-section {
-    padding: 72px 0 48px;
-  }
-
-  .testimonial-section {
-    padding: 48px 0 120px;
-  }
-
-  .header-inner {
-    min-height: 76px;
-  }
-
-  .brand-text {
-    font-size: 24px;
-  }
-
-  .brand-icon {
-    width: 42px;
-    height: 42px;
-    font-size: 18px;
-  }
-
-  .hero-title {
-    font-size: 44px;
-  }
-
-  .section-title {
-    font-size: 30px;
-  }
-
-  .hero-stats,
-  .portfolio-grid,
-  .process-grid,
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-image-card {
-    min-height: 420px;
-  }
-
-  .hero-social-card {
-    position: static;
-    transform: none;
-    margin-top: 16px;
-    justify-content: center;
-  }
-
-  .about-overlap-card {
-    margin-top: -40px;
-    padding: 32px 24px;
-  }
-
-  .contact-card {
-    padding: 32px 24px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-nav {
-    justify-content: center;
-  }
-
-  .project-idea-inner h2 {
-    font-size: 34px;
-  }
-}
 
 @media (max-width: 576px) {
   .container {
@@ -292,130 +209,7 @@
   }
 }
 
-@media (max-width: 400px) {
-  .container {
-    width: min(100% - 20px, 1200px);
-  }
 
-  .hero-title {
-    font-size: 34px;
-    line-height: 1.1;
-  }
-
-  .section-title {
-    font-size: 26px;
-  }
-
-  .hero-text,
-  .section-text,
-  .project-idea-inner p,
-  .card-text {
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  .hero-image-card {
-    min-height: 340px;
-  }
-
-  .hero-stats {
-    margin-top: 32px;
-  }
-
-  .hero-stat-card {
-    padding: 18px 10px;
-  }
-
-  .stat-number {
-    font-size: 24px;
-  }
-
-  .stat-label {
-    font-size: 14px;
-  }
-
-  .hero-social-card {
-    gap: 8px;
-    padding: 12px;
-  }
-
-  .social-link {
-    width: 38px;
-    height: 38px;
-    font-size: 13px;
-  }
-
-  .about-overlap-card,
-  .contact-card {
-    padding: 20px 16px;
-  }
-
-  .process-card,
-  .service-card,
-  .portfolio-content,
-  .blog-content {
-    padding: 18px;
-  }
-
-  .portfolio-card .card-title,
-  .blog-card .card-title,
-  .service-card .card-title {
-    font-size: 20px;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    font-size: 16px;
-  }
-
-  .btn {
-    min-height: 44px;
-    padding: 0 14px;
-    font-size: 14px;
-  }
-
-  .project-idea-inner h2 {
-    font-size: 28px;
-  }
-
-  .back-to-top {
-    width: 42px;
-    height: 42px;
-    font-size: 18px;
-    right: 12px;
-    bottom: 12px;
-  }
-}
-
-@media (max-width: 1023px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .header-right,
-  .nav-desktop {
-    display: none;
-  }
-
-  .nav-mobile.show {
-    display: flex;
-  }
-}
-
-@media (min-width: 1024px) {
-  .menu-toggle {
-    display: none;
-  }
-
-  .header-right,
-  .nav-desktop {
-    display: flex;
-  }
-
-  .nav-mobile {
-    display: none !important;
-  }
-}
 
 @media (max-width: 767px) {
   .container {
@@ -464,8 +258,21 @@
   .blog-grid,
   .process-grid,
   .form-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
+  .process-card,
+.process-card-offset,
+.process-card:nth-child(2),
+.process-card:nth-child(4) {
+  margin-top: 0 !important;
+}
+.process-card {
+  padding: 20px;
+  border-radius: 16px;
+}
+.process-grid {
+  gap: 20px;
+}
 
   .hero-stats {
     margin-top: 40px;
@@ -499,7 +306,7 @@
 @media (max-width: 1023px) {
   .hero-grid {
     display: flex !important; /* 🔥 override grid */
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     text-align: center;
   }
@@ -517,6 +324,6 @@
 
   .hero-image-card {
     margin: 0 auto;
-    max-width: 320px;
+  
   }
 }

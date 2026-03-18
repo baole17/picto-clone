@@ -108,28 +108,28 @@ window.addEventListener("load", () => {
 
 $(document).ready(function () {
   if ($(".blog-slider").length) {
-    $(".blog-slider").slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      arrows: false,
-      dots: true,
-      infinite: true,
-      speed: 500,
-      responsive: [
-        {
-          breakpoint: 1200,
-          settings: {
-            slidesToShow: 2,
-          },
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1,
-          },
-        },
-      ],
-    });
+    $('.blog-slider').slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  infinite: false, // 👈 QUAN TRỌNG (tránh dư item ảo)
+  dots: true,
+  arrows: false,
+
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 640,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ]
+});
   }
 
   if ($(".clients-slider").length) {
