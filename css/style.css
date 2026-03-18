@@ -1222,36 +1222,8 @@ cursor: pointer;
   justify-content: center;
   gap: 8px;
 }
-
-.slick-dots li {
-  list-style: none !important;
-  margin: 0 !important;
-}
-
-/* DOT thường */
-.slick-dots li button {
-  font-size: 0;
-  width: 8px; /* 👈 nhỏ lại */
-  height: 8px;
-  border-radius: 50%;
-  background-color: #210c33 !important;
-  padding: 0;
-  opacity: 0.4; /* 👈 mờ đi */
-  transition: all 0.3s ease;
-}
-
-/* DOT active */
-.slick-dots li.slick-active button {
-  width: 30px; /* 👈 dài ra */
-  height: 8px;
-  border-radius: 100px;
-  background: var(--primary);
-  opacity: 1;
-}
-
-.slick-dots li button:before {
-  display: none !important;
-}
-.slick-dots li.slick-active button {
-  transform: scale(1.1);
-}
+.slick-dots li { margin: 0 !important; list-style: none !important; }
+.slick-dots li button { font-size: 0; width: 10px; height: 10px; border-radius: 50%; background: #c7ccd3; padding: 0; }
+.slick-dots li.slick-active button { background: var(--primary); }
+.slick-dots li button::before { display: none !important; }
+.slick-prev::before, .slick-next::before { color: var(--primary); font-size: 24px; }
