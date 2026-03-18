@@ -327,8 +327,8 @@ textarea {
 ========================= */
 .hero-section {
   position: relative;
-  padding: 88px 0 150px;
-  overflow: hidden;
+  padding: 108px;
+ 
 
   background:
     radial-gradient(circle at 12% 100%, #ffe2b0f5 0 6px, transparent 16%),
@@ -467,6 +467,7 @@ textarea {
 ========================= */
 .about-overlap-card {
   position: relative;
+   bottom: -150px;
   z-index: 2;
   margin-top: 136px;
   padding: 112px 88px;
@@ -918,9 +919,11 @@ cursor: pointer;
 ========================= */
 .contact-section {
   position: relative;
+  bottom: -76px;
   padding: 0;
   margin-top: -60px;
   z-index: 5;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.08);
 }
 
 .contact-card {
