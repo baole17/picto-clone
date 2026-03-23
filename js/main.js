@@ -132,52 +132,7 @@ $(document).ready(function () {
 });
   }
 
-  if ($(".clients-slider").length) {
-  const clientSlider = $(".clients-slider");
-
-  clientSlider.slick({
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 1, // 🔥 FIX
-    speed: 5000,
-    cssEase: "linear",
-    pauseOnHover: false, // 👈 tắt cái này
-    pauseOnFocus: false,
-    draggable: false,
-    swipe: false,
-    touchMove: false,
-    variableWidth: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 4 },
-      },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 3 },
-      },
-      {
-        breakpoint: 480,
-        settings: { slidesToShow: 2 },
-      },
-    ],
-  });
-
-  // 🔥 HANDLE HOVER THỦ CÔNG
-  clientSlider.on("mouseenter", function () {
-    $(this).slick("slickPause");
-  });
-
-  clientSlider.on("mouseleave", function () {
-    $(this).slick("slickPlay");
-  });
-}
-
-  if ($(".testimonial-slider").length) {
+if ($(".testimonial-slider").length) {
     $(".testimonial-slider").slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -190,4 +145,45 @@ $(document).ready(function () {
   }
 });
 
-
+// ── Happy Clients Carousel (rAF, pause on hover) ──
+(function () {
+  const logos = [
+    { src: "assets/images/Dribbble-logo.jpg", alt: "Dribbble" },
+    { src: "assets/images/card.webp",         alt: "Amazon"   },
+    { src: "assets/images/card.webp",         alt: "Medium"   },
+    { src: "assets/images/card1.jpg",         alt: "Spotify"  },
+    { src: "assets/images/card1.jpg",         alt: "Google"   },
+    { src: "assets/images/card1.jpg",         alt: "Brand"    },
+    { src: "assets/images/person.webp",       alt: "Client 7" },
+    { src: "assets/images/person.webp",       alt: "Client 8" },
+  ];
+  const track = document.getElementById('clientsTrack');
+  if (!track) return;
+  function makeItems(list) {
+    return list.map(function (b) {
+      var div = document.createElement('div');
+      div.className = 'client-logo';
+      var img = document.createElement('img');
+      img.src = b.src; img.alt = b.alt; img.loading = 'lazy';
+      div.appendChild(img);
+      return div;
+    });
+  }
+  makeItems(logos).concat(makeItems(logos)).concat(makeItems(logos))
+    .forEach(function (el) { track.appendChild(el); });
+  var SPEED = 0.6, x = 0, paused = false;
+  function step() {
+    if (!paused) {
+      x += SPEED;
+      if (x >= track.scrollWidth / 3) x -= track.scrollWidth / 3;
+      track.style.transform = 'translateX(' + (-x) + 'px)';
+    }
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+  var wrapper = document.getElementById('clientsCarousel');
+  wrapper.addEventListener('mouseenter', function () { paused = true; });
+  wrapper.addEventListener('mouseleave', function () { paused = false; });
+  wrapper.addEventListener('touchstart', function () { paused = true; }, { passive: true });
+  wrapper.addEventListener('touchend',   function () { paused = false; }, { passive: true });
+})();
