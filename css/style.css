@@ -1275,9 +1275,7 @@ width: 100%;
 .site-header {
   transition: background 0.5s ease, border-color 0.5s ease;
 }
-.about-wrapper {
-  padding: 40px 0 0; /* 👈 bỏ bottom */
-}
+
 /* Fix slick dots */
 .slick-dots {
   list-style: none !important;
