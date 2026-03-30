@@ -401,10 +401,11 @@
     margin: 0 auto;
   
   }
-    .contact-grid {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 40px;
+  .hero-stats {
+    margin-top: 40px;
+  }
+  .about-overlap-card {
+    margin-top: 40px;
   }
 }
 @media (max-width: 767px) {
