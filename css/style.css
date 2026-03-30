@@ -988,14 +988,14 @@ width: 100%;
   grid-template-columns: 420px minmax(0, 1fr);
   grid-template-rows: auto 1fr;
   align-items: start;
-  gap: 32px 88px;
+  gap: 24px 88px; /* 👈 giảm row gap */
 }
 
 .contact-title-block {
   grid-column: 1;
   grid-row: 1;
 }
-.contact-content .section-title {
+.contact-title-block .section-title {
   margin-bottom: 16px;
 font-size: 35px;
   line-height: 1.25;
@@ -1028,11 +1028,11 @@ font-size: 35px;
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 24px;
+  padding: 16px 20px; /* 👈 giảm padding */
   background: #ffffff;
   border-radius: 10px;
   border: 1px solid var(--border);
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.05);
+  box-shadow: none; /* 👈 bỏ shadow */
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -1092,7 +1092,6 @@ font-size: 35px;
   font-size: 18px;
   line-height: 1.65;
   margin: 0;
-  text-align: center;
 }
 
 .form-group {
