@@ -147,16 +147,7 @@ if ($(".testimonial-slider").length) {
 
 // ── Happy Clients Carousel (rAF, pause on hover) ──
 (function () {
-  const logos = [
-    { src: "assets/images/Dribbble-logo.jpg", alt: "Dribbble" },
-    { src: "assets/images/card.webp",         alt: "Amazon"   },
-    { src: "assets/images/card.webp",         alt: "Medium"   },
-    { src: "assets/images/card1.jpg",         alt: "Spotify"  },
-    { src: "assets/images/card1.jpg",         alt: "Google"   },
-    { src: "assets/images/card1.jpg",         alt: "Brand"    },
-    { src: "assets/images/person.webp",       alt: "Client 7" },
-    { src: "assets/images/person.webp",       alt: "Client 8" },
-  ];
+  
   const track = document.getElementById('clientsTrack');
   if (!track) return;
   function makeItems(list) {
