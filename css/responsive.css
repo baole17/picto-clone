@@ -355,6 +355,7 @@
   .process-grid {
     gap: 20px;
     grid-template-columns: repeat(2, 1fr);
+    padding-top: 0;
   }
 
   /* Portfolio */
@@ -418,7 +419,7 @@
   .about-content .section-title,
   .contact-title-block .section-title,
   .process-content .section-title {
-    font-size: 24px !important;
+    font-size: 30px !important;
   }
 
   .hero-title {
