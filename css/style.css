@@ -369,7 +369,6 @@ textarea {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-right: -32px; 
 }
 
 .hero-content {
