@@ -23,6 +23,13 @@
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-xl: 24px;
+  --container-gutter: 24px;
+  --section-space-y: 96px;
+  --section-space-y-tight: 72px;
+  --heading-space: 48px;
+  --heading-gap: 20px;
+  --hero-space-top: 152px;
+  --hero-space-bottom: 120px;
 }
 
 html {
@@ -77,24 +84,37 @@ textarea {
   width: 100%;
   max-width: 1320px;
   margin: 0 auto;
+  padding-inline: var(--container-gutter);
 }
 
 .section {
-  padding: 45px 0;
+  padding: var(--section-space-y) 0;
 }
 
 .section-heading {
   max-width: 760px;
-  margin: 0 auto 56px;
+  margin: 0 auto var(--heading-space);
   text-align: center;
 }
 
 .section-title {
-  margin: 0 0 24px;
+  margin: 0 0 var(--heading-gap);
   font-size: 48px;
   line-height: 1.2;
   font-weight: 500;
   color: var(--text-main);
+}
+
+.section-heading .section-title,
+.about-content .section-title,
+.process-content .section-title,
+.services-content .section-title,
+.contact-title-block .section-title {
+  margin-bottom: var(--heading-gap);
+}
+
+.section-heading .section-text {
+  margin-bottom: 0;
 }
 
 .section-text {
@@ -126,23 +146,23 @@ textarea {
    SECTION SPACING FIX
 ========================= */
 .portfolio-section {
-  padding: 40px 0;
+  padding: var(--section-space-y) 0;
 }
 
 .blog-section {
-  padding: 100px 15px;
+  padding: var(--section-space-y) 0;
 }
 
 .services-section {
-  padding: 100px 0;
+  padding: var(--section-space-y) 0;
 }
 
 .clients-section {
-  padding: 100px 0 60px;
+  padding: var(--section-space-y) 0 var(--section-space-y-tight);
 }
 
 .testimonial-section {
-  padding: 60px 0 160px;
+  padding: var(--section-space-y-tight) 0 144px;
 }
 
 /* =========================
@@ -341,7 +361,7 @@ textarea {
 ========================= */
 .hero-section {
   position: relative;
-  padding-top: 136px;
+  padding-top: var(--hero-space-top);
   background:
     radial-gradient(circle at 12% 100%, #ffe2b0f5 0 6px, transparent 16%),
     radial-gradient(circle at 95% -15%, #da4df166 5%, transparent 32%),
@@ -352,7 +372,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 48px;
+  gap: 64px;
 }
 
 /* LEFT */
@@ -406,7 +426,7 @@ textarea {
 }
 
 .hero-stats {
-  margin-top: 136px;
+  margin-top: 112px;
   max-width: 648px;
 
   display: flex;
@@ -482,14 +502,19 @@ textarea {
 ========================= */
 .about-overlap-card {
   position: relative;
-  bottom: -90px;
+  bottom: -72px;
   z-index: 2;
-  margin-top: 136px;
-  padding: 112px 88px;
+  margin-bottom: -110px;
+  padding: 112px;
   background: #ffffff;
   overflow: visible;
   border-radius: 24px;
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.08);
+}
+
+.about-wrapper {
+  padding-top: 130px;
+  padding-bottom: 80px;
 }
 
 .about-grid {
@@ -560,8 +585,6 @@ textarea {
 }
 
 .about-content .section-title {
-  max-width: 560px;
-  margin-bottom: 24px;
   font-size: clamp(34px, 4vw, 38px);
   line-height: 1.25;
   font-weight: 600;
@@ -588,7 +611,7 @@ textarea {
 ========================= */
 .process-section {
   background: #f6f7fb;
-  padding: 140px 0 100px;
+  padding: 112px 0 96px;
 }
 
 .process-layout {
@@ -603,7 +626,6 @@ textarea {
 }
 
 .process-content .section-title {
-  margin-bottom: 24px;
   font-size: clamp(34px, 4vw, 48px);
   line-height: 1.2;
   font-weight: 600;
@@ -747,7 +769,7 @@ textarea {
 ========================= */
 .project-idea-section {
   background: #132238;
-  padding: 100px 0;
+  padding: var(--section-space-y) 0;
 }
 
 .project-idea-inner {
@@ -812,7 +834,7 @@ textarea {
   background: var(--bg-soft);
 }
 .services-content {
-  padding-top: 100px;
+  padding-top: 88px;
 }
 
 .services-grid {
@@ -857,7 +879,6 @@ textarea {
 }
 /* CLIENTS */
 .brand-slider {
-  width: 80%;
   margin: auto;
   overflow: hidden;
 }
@@ -876,12 +897,18 @@ textarea {
 .brand-track div {
   flex-shrink: 0;
   width: calc(100% / 12);
-  padding: 0 15px;
+  padding: 0 8px;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .brand-track img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: 72px;
+  object-fit: contain;
 }
 
 @keyframes scroll {
@@ -975,7 +1002,7 @@ width: 100%;
 .contact-card {
   position: relative;
   top: 0;
-  padding: 88px;
+  padding: 96px;
   background: #ffffff;
   border-radius: 24px;
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
@@ -994,10 +1021,13 @@ width: 100%;
   grid-row: 1;
 }
 .contact-title-block .section-title {
-  margin-bottom: 16px;
-font-size: 35px;
+  font-size: 35px;
   line-height: 1.25;
   font-weight: 600;
+}
+
+.contact-title-block .section-text {
+  margin-bottom: 0;
 }
 .contact-content {
   grid-column: 1;
