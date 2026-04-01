@@ -489,6 +489,19 @@
   .contact-form .btn {
     justify-content: center;
   }
+    .contact-title-block .section-text,
+  .contact-form-intro,
+  .contact-available-text {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* label input */
+  .contact-form label,
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    font-size: 16px;
+  }
     .footer-inner {
     grid-template-columns: 1fr !important;
     justify-items: center !important;
