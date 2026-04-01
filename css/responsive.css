@@ -90,6 +90,18 @@
     text-align: center;
     padding-top: 56px;
   }
+    .about-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .about-overlap-card {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-bottom: -80px;
+  }
+
 }
 
 /* =========================
@@ -123,7 +135,7 @@
 
   /* Hero */
   .hero-section {
-    padding: 72px 0 56px;
+    /* padding: 72px 0 56px; */
   }
 
   .hero-grid {
@@ -156,12 +168,13 @@
   /* About */
   .about-wrapper {
     padding-top: 40px;
-    padding-bottom: 80px;
+    padding-bottom: 0;
   }
 
   .about-overlap-card {
     padding: 56px 40px;
     margin-top: 0;
+    margin-bottom: -119px;
   }
 
   .about-grid {
@@ -323,8 +336,8 @@
   /* About */
   .about-overlap-card {
     bottom: -24px;
-    margin-top: 0;
-    margin-bottom: 0;
+    /* margin-top: 0; */
+    margin-bottom: 41px;
     padding: 40px 24px;
     width: 100%;
   }
@@ -340,6 +353,7 @@
 
   .about-content {
     text-align: center;
+    padding-top: 43px;
   }
 
   .about-content .section-title {
@@ -356,7 +370,6 @@
 
   .about-wrapper {
     overflow: hidden;
-    padding: 32px 0 72px;
   }
 
   /* Process */
@@ -369,6 +382,9 @@
 
   .process-card .card-title {
     font-size: 16px;
+  }
+  .process-content {
+    padding-top: 10px;
   }
 
   .process-card .card-text {
@@ -454,7 +470,7 @@
   .about-content .section-title,
   .contact-title-block .section-title,
   .process-content .section-title {
-    font-size: 30px !important;
+    font-size: 24px !important;
   }
 
   .hero-title {
@@ -524,6 +540,9 @@
   .contact-socials {
     justify-content: center;
   }
+  .testimonial-section{
+  padding: 20px !important;
+}
 }
 
 /* =========================
@@ -579,6 +598,16 @@
     right: 16px;
     bottom: 16px;
   }
+  .brand-track div {
+  flex-shrink: 0;
+  width: calc(100% / 6);
+  padding: 0 8px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 }
 
 /* =========================
