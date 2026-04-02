@@ -96,8 +96,14 @@ textarea {
   margin: 0 auto var(--heading-space);
   text-align: center;
 }
-
 .section-title {
+  margin: 0 0 var(--heading-gap);
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--text-main);
+}
+.section-title-desktop {
   margin: 0 0 var(--heading-gap);
   font-size: 48px;
   line-height: 1.2;
@@ -110,7 +116,7 @@ textarea {
 .process-content .section-title,
 .services-content .section-title,
 .contact-title-block .section-title {
-  margin-bottom: var(--heading-gap);
+  /* margin-bottom: var(--heading-gap); */
 }
 
 .section-heading .section-text {
@@ -504,7 +510,7 @@ textarea {
   position: relative;
   bottom: -72px;
   z-index: 2;
-  margin-bottom: -110px;
+  margin-bottom: -90px;
   padding: 112px;
   background: #ffffff;
   overflow: visible;
@@ -993,7 +999,7 @@ width: 100%;
 .contact-section {
   position: relative;
   bottom: -76px;
-  padding: 0;
+  padding: 0 16px;
   margin-top: -60px;
   z-index: 5;
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.08);
@@ -1009,29 +1015,26 @@ width: 100%;
 }
 
 .contact-grid {
-  display: grid;
-  grid-template-columns: 420px minmax(0, 1fr);
-  grid-template-rows: auto 1fr;
-  align-items: start;
-  gap: 24px 88px; /* 👈 giảm row gap */
+  
+   /* 👈 giảm row gap */
+  display:  flex;
+  align-items: flex-start;
+  gap: 48px;
 }
 
-.contact-title-block {
-  grid-column: 1;
-  grid-row: 1;
-}
+.contact-title-block {flex: 1;display: flex;flex-direction: column;}
 .contact-title-block .section-title {
   font-size: 35px;
   line-height: 1.25;
   font-weight: 600;
+  margin: 0;
 }
 
 .contact-title-block .section-text {
   margin-bottom: 0;
 }
 .contact-content {
-  grid-column: 1;
-  grid-row: 2;
+  margin: 35px 0
 }
 
 .contact-form {
@@ -1110,6 +1113,7 @@ width: 100%;
 }
 
 .contact-form {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -1156,10 +1160,6 @@ width: 100%;
   gap: 24px;
 }
 
-.form-group textarea {
-  min-height: 120px;
-}
-
 .contact-form .btn {
   align-self: flex-start;
   margin-top: 8px;
@@ -1170,11 +1170,15 @@ width: 100%;
 
 .contact-title-block .section-text {
   display: block; /* hiện ở desktop */
+  padding: 16px 0;
 }
 .contact-form-submit {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+.section-title-mobile {
+  display: none;
 }
 /* =========================
    FOOTER

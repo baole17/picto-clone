@@ -2,9 +2,6 @@
    1400px
 ========================= */
 @media (max-width: 1400px) {
-  .container {
-    max-width: 1240px;
-  }
 
   .hero-grid {
     gap: 40px;
@@ -218,7 +215,7 @@
   }
 
   .contact-title-block {
-    order: 1;
+    order: 2;
     width: 100%;
     text-align: center;
     margin: 0;
@@ -228,6 +225,7 @@
     width: 100%;
     margin: 0 0 20px;
     text-align: center;
+    display: none;
   }
 
   .contact-title-block .section-text {
@@ -236,10 +234,11 @@
     text-align: center;
     font-size: 18px;
     line-height: 1.4;
+    display: none;
   }
 
   .contact-form {
-    order: 2;
+    order: 1;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
@@ -249,6 +248,13 @@
   .contact-content {
     order: 3;
     width: 100%;
+  }
+    .section-title-mobile {
+    display: block;
+    text-align: center;
+    margin: 0;
+    font-size: 38px;
+    font-weight: 520;
   }
 
 
@@ -481,14 +487,25 @@
   .contact-info-item p {
     font-size: 14px;
   }
+  .contact-card {
+        padding: 20px;
+    }
+  .contact-form > p {
+    text-align: center;
+  }
 
   .contact-socials {
     justify-content: center;
+  }
+   .section-title-mobile {
+    font-size: 24px;
+    font-weight: 520;
   }
 
   .contact-form .btn {
     justify-content: center;
   }
+  
     .contact-title-block .section-text,
   .contact-form-intro,
   .contact-available-text {
