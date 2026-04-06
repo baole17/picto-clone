@@ -108,24 +108,47 @@ window.addEventListener("load", () => {
 
 $(document).ready(function () {
   if ($(".blog-slider").length) {
-    $('.blog-slider').slick({
+$('.blog-slider').slick({
   slidesToShow: 4,
   slidesToScroll: 1,
-  infinite: false, // 👈 QUAN TRỌNG (tránh dư item ảo)
-  dots: true,
   arrows: false,
-
+  dots: true,
+  infinite: false,
+  speed: 500,
+  adaptiveHeight: false,
+  rows: 0,
+  respondTo: 'window',
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1199,
       settings: {
-        slidesToShow: 2
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: false
       }
     },
     {
-      breakpoint: 640,
+      breakpoint: 1023,
       settings: {
-        slidesToShow: 1
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: false
+      }
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: false
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: false
       }
     }
   ]
