@@ -70,7 +70,6 @@
 
   .process-layout {
     gap: 0px 40px 0px 0px;
-    padding: 100px 16px;
   }
 
   .process-content {
@@ -161,7 +160,7 @@
 
   /* About */
   .about-wrapper {
-    padding-top: 40px;
+    padding-top: 12px;
     padding-bottom: 0;
   }
 
@@ -364,9 +363,7 @@
 
   /* About */
   .about-overlap-card {
-    bottom: -24px;
-    /* margin-top: 0; */
-    margin-bottom: 41px;
+    margin-top: 0; 
     padding: 40px 24px;
     width: 100%;
   }
@@ -397,9 +394,7 @@
     justify-content: center;
   }
 
-  .about-wrapper {
-    overflow: hidden;
-  }
+
 
   /* Process */
   .process-icon {
