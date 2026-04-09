@@ -34,7 +34,10 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 110px;
+  scroll-padding-top: 130px;
+}
+#about {
+  scroll-margin-top: -60px;
 }
 
 body {
@@ -307,6 +310,11 @@ textarea {
   font-size: 28px;
   color: var(--text-main);
 }
+.menu-toggle svg {
+  width: 24px;
+  height: 24px;
+  color: var(--text-main);
+}
 
 .nav-desktop {
   display: flex;
@@ -333,12 +341,24 @@ textarea {
   color: var(--primary);
 }
 
+.nav-link:active {
+  background: var(--primary-dark);
+  color: #fff;
+  transform: scale(0.97);
+  transition: all 0.1s ease;
+}
 .nav-link.active {
   background: var(--primary);
   color: #fff;
   box-shadow: 0 6px 14px rgba(165, 61, 255, 0.25);
-}
 
+}
+.nav-link.nav-clicking {
+  background: oklch(14% .005 285.823) !important;
+  color: #fff !important;
+  transform: scale(0.97);
+  transition: all 0.1s ease !important; /* ← nhanh hơn */
+}
 .nav-mobile {
   display: none;
   flex-direction: column;
@@ -629,7 +649,7 @@ textarea {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(540px, 648px);
   align-items: center;
-  padding: 140px 8px 100px;
+  padding: 250px 8px 150px;
 }
 
 .process-content {
@@ -1010,6 +1030,7 @@ width: 100%;
   border-radius: 24px;
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
 }
+
 
 .contact-grid {
   

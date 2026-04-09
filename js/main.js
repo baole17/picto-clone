@@ -24,32 +24,39 @@ function setActiveLink(targetId) {
   });
 }
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    const target = link.getAttribute("href");
-    if (!target || !target.startsWith("#")) return;
+let isScrollingToSection = false;
 
-    const targetId = target.substring(1);
-    removeActiveClasses();
-    setActiveLink(targetId);
+$('.nav-link').on('click', function(e) {
+  $(this).addClass('nav-clicking');
+  setTimeout(() => $(this).removeClass('nav-clicking'), 150);
 
-    if (navMobile && navMobile.classList.contains("show")) {
-      navMobile.classList.remove("show");
-    }
+  const href = $(this).attr('href');
+  if (!href || !href.startsWith('#')) return;
+  e.preventDefault();
+
+  removeActiveClasses();
+  isScrollingToSection = false;
+
+  if (navMobile && navMobile.classList.contains('show')) {
+    navMobile.classList.remove('show');
+  }
+
+  const offset = href === '#about' ? -60 : 110;
+  const targetEl = document.querySelector(href);
+  const targetPos = targetEl.getBoundingClientRect().top + window.scrollY - offset;
+
+  window.scrollTo({
+    top: targetPos,
+    behavior: 'smooth'
   });
 });
 
 function handleScrollActive() {
   let currentSection = "";
-
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 140;
+    const sectionTop = section.offsetTop - 200;
     const sectionHeight = section.offsetHeight;
-
-    if (
-      window.scrollY >= sectionTop &&
-      window.scrollY < sectionTop + sectionHeight
-    ) {
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
       currentSection = section.getAttribute("id");
     }
   });
@@ -62,7 +69,6 @@ function handleScrollActive() {
 
 function toggleBackToTop() {
   if (!backToTop) return;
-
   if (window.scrollY > 400) {
     backToTop.style.opacity = "1";
     backToTop.style.visibility = "visible";
@@ -81,10 +87,7 @@ if (backToTop) {
   backToTop.style.transition = "all 0.3s ease";
 
   backToTop.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
@@ -93,69 +96,43 @@ window.addEventListener("scroll", () => {
   toggleBackToTop();
 
   if (window.scrollY > 80) {
-  header.style.background = 'rgba(245, 247, 250, 0.95)';
-  header.style.borderBottom = '1px solid rgba(19, 34, 56, 0.1)';
-} else {
-  header.style.background = '#ffffff';
-  header.style.borderBottom = '1px solid transparent';
-}
+    header.style.background = 'rgba(245, 247, 250, 0.95)';
+    header.style.borderBottom = '1px solid rgba(19, 34, 56, 0.1)';
+  } else {
+    header.style.background = '#ffffff';
+    header.style.borderBottom = '1px solid transparent';
+  }
 });
 
+// Reload: scroll về top, không highlight gì
 window.addEventListener("load", () => {
-  handleScrollActive();
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  removeActiveClasses();
   toggleBackToTop();
 });
 
 $(document).ready(function () {
   if ($(".blog-slider").length) {
-$('.blog-slider').slick({
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  arrows: false,
-  dots: true,
-  infinite: false,
-  speed: 500,
-  adaptiveHeight: false,
-  rows: 0,
-  respondTo: 'window',
-  responsive: [
-    {
-      breakpoint: 1199,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: false
-      }
-    },
-    {
-      breakpoint: 1023,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: false
-      }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: false
-      }
-    },
-    {
-      breakpoint: 576,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: false
-      }
-    }
-  ]
-});
+    $('.blog-slider').slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      infinite: false,
+      speed: 500,
+      adaptiveHeight: false,
+      rows: 0,
+      respondTo: 'window',
+      responsive: [
+        { breakpoint: 1199, settings: { slidesToShow: 3, slidesToScroll: 1, infinite: false } },
+        { breakpoint: 1023, settings: { slidesToShow: 3, slidesToScroll: 1, infinite: false } },
+        { breakpoint: 767,  settings: { slidesToShow: 2, slidesToScroll: 1, infinite: false } },
+        { breakpoint: 576,  settings: { slidesToShow: 1, slidesToScroll: 1, infinite: false } }
+      ]
+    });
   }
 
-if ($(".testimonial-slider").length) {
+  if ($(".testimonial-slider").length) {
     $(".testimonial-slider").slick({
       slidesToShow: 1,
       slidesToScroll: 1,
@@ -168,9 +145,8 @@ if ($(".testimonial-slider").length) {
   }
 });
 
-// ── Happy Clients Carousel (rAF, pause on hover) ──
+// Happy Clients Carousel
 (function () {
-  
   const track = document.getElementById('clientsTrack');
   if (!track) return;
   function makeItems(list) {
@@ -199,5 +175,5 @@ if ($(".testimonial-slider").length) {
   wrapper.addEventListener('mouseenter', function () { paused = true; });
   wrapper.addEventListener('mouseleave', function () { paused = false; });
   wrapper.addEventListener('touchstart', function () { paused = true; }, { passive: true });
-  wrapper.addEventListener('touchend',   function () { paused = false; }, { passive: true });
+  wrapper.addEventListener('touchend', function () { paused = false; }, { passive: true });
 })();
