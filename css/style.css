@@ -39,6 +39,9 @@ html {
 #about {
   scroll-margin-top: -60px;
 }
+#contact {
+  scroll-margin-top: -200px;
+}
 
 body {
   margin: 0;
@@ -1018,7 +1021,6 @@ width: 100%;
   position: relative;
   bottom: -60px;
   padding: 0 8px;
-  margin-top: -60px;
   z-index: 5;
 }
 
@@ -1356,7 +1358,7 @@ width: 100%;
 #blog,
 #services,
 #contact {
-  scroll-margin-top: 110px;
+  scroll-margin-top: -72px;
 }
 .site-header {
   transition: background 0.5s ease, border-color 0.5s ease;

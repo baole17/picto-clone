@@ -608,11 +608,7 @@
     height: 35px;
     font-size: 15px;
   }
-  .header-right .btn-primary {
-    font-size: 14px !important;
-    min-height: 36px;
-    padding: 0 14px;
-  }
+  
   .card-title {
     font-size: 16px;
   }

@@ -54,9 +54,10 @@ $('.nav-link').on('click', function(e) {
 function handleScrollActive() {
   let currentSection = "";
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 200;
-    const sectionHeight = section.offsetHeight;
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+    const rect = section.getBoundingClientRect();
+    const threshold = section.id === 'contact' ? 250 : 110;
+     console.log(section.id, rect.top, threshold);
+    if (rect.top <= threshold && rect.bottom > 0) {
       currentSection = section.getAttribute("id");
     }
   });
@@ -66,7 +67,6 @@ function handleScrollActive() {
     setActiveLink(currentSection);
   }
 }
-
 function toggleBackToTop() {
   if (!backToTop) return;
   if (window.scrollY > 400) {
