@@ -20,6 +20,9 @@
   .contact-grid {
     grid-template-columns: 360px minmax(0, 1fr);
   }
+  .footer-inner {
+    padding: 160px 12px 0;
+  }
 }
 
 /* =========================
@@ -104,9 +107,6 @@
    1023px
 ========================= */
 @media (max-width: 1023px) {
-  .section-heading {
-    margin-bottom: 40px;
-  }
 
   /* Header */
   .menu-toggle {
@@ -243,6 +243,9 @@
     order: 3;
     width: 100%;
   }
+  .contact-form-submit {
+      justify-content: center;
+  }
     .section-title-mobile {
     display: block;
     text-align: center;
@@ -320,9 +323,6 @@
 
   }
 
-  .section-heading {
-    margin-bottom: 36px;
-  }
   .section-title {
     font-size: 36px;
   }
@@ -413,7 +413,9 @@
   .process-content {
     padding-top: 10px;
   }
-
+  .process-content .section-title {
+  font-size: 36px;
+  }
   .process-card .card-text {
     font-size: 13px;
   }
@@ -453,10 +455,17 @@
   }
     .services-section {
     padding: 40px 0;
-  }   
+  }
+  .clients-section {
+  padding: 40px 8px;
+}
   /* Blog */
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+   .testimonial-text-main {
+    font-size: 15px;
+    padding-top: 16px;
   }
 
   /* Form */
@@ -539,6 +548,39 @@
     text-align: center !important;
     max-width: none !important;
   }
+   .footer-inner {
+    padding: 100px 12px 0;
+  }
+  /* Hero */
+  .hero-actions .btn {
+    font-size: 18px;
+  }
+
+  /* About card */
+  .about-actions .btn {
+    font-size: 14px;
+  }
+
+  /* Portfolio */
+  .portfolio-content .btn {
+    font-size: 16px;
+  }
+
+  /* Project idea */
+  .project-idea-inner .btn {
+    font-size: 12px;
+  }
+
+  /* Services */
+  .services-list .btn,
+  .services-content .btn {
+    font-size: 12px;
+  }
+
+  /* Contact */
+  .contact-form .btn {
+    font-size: 13px;
+  }
 }
 
 /* =========================
@@ -546,12 +588,9 @@
 ========================= */
 @media (max-width: 639px) {
   /* Font sizes */
-  .section-title,
-  .about-content .section-title,
-  .contact-title-block .section-title,
-  .process-content .section-title {
-    font-size: 24px !important;
-  }
+.process-content .section-title {
+  font-size: 30px;
+}
 
   .hero-title {
     font-size: 36px;
@@ -564,7 +603,11 @@
   .section-text {
     font-size: 12px;
   }
-
+  .brand-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+  }
   .card-title {
     font-size: 16px;
   }
@@ -583,6 +626,7 @@
 
   .testimonial-text-main {
     font-size: 15px;
+    padding-top: 0;
   }
 
   .testimonial-text-small {
@@ -662,16 +706,17 @@
     padding-inline: 16px;
   }
 
-  .section-heading {
-    margin-bottom: 32px;
-  }
+
 
   .header-inner {
     min-height: 72px;
   }
 
   .brand-text {
-    font-size: 22px;
+    font-size: 24px;
+  }
+  .brand-text-footer {
+    font-size: 30px;
   }
 
   .brand-icon {

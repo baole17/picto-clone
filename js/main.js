@@ -162,7 +162,7 @@ if ($(".testimonial-slider").length) {
       arrows: false,
       dots: true,
       infinite: true,
-      adaptiveHeight: true,
+      adaptiveHeight: false,
       speed: 500,
     });
   }

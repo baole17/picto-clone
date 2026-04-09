@@ -91,7 +91,7 @@ textarea {
 
 .section-heading {
   max-width: 760px;
-  margin: 0 auto var(--heading-space);
+  margin: 0 auto;
   text-align: center;
 }
 .section-title {
@@ -119,6 +119,7 @@ textarea {
 
 .section-heading .section-text {
   margin-bottom: 0;
+  padding-bottom: 70px;
 }
 
 .section-text {
@@ -176,8 +177,8 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 52px;
-  padding: 0 24px;
+  min-height: 43px;
+  padding: 0 20px;
   border-radius: 6px;
   font-size: 16px;
   font-weight: 600;
@@ -252,6 +253,7 @@ textarea {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  padding: 8px;
 }
 
 .header-left,
@@ -275,22 +277,28 @@ textarea {
 }
 
 .brand-icon {
-  width: 48px;
-  height: 48px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   background: #9929fb;  /* tím đậm hơn */
   color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .brand-text {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 550;
   color: #132238;  /* đen đậm */
+  letter-spacing: -0.3px;
+}
+.brand-text-footer{
+  font-size: 32px;
+  font-weight: 550;
+  color: oklch(92% .004 286.32); 
   letter-spacing: -0.3px;
 }
 
@@ -621,7 +629,7 @@ textarea {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(540px, 648px);
   align-items: center;
-  padding: 140px 8px ;
+  padding: 140px 8px 100px;
 }
 
 .process-content {
@@ -629,7 +637,7 @@ textarea {
 }
 
 .process-content .section-title {
-  font-size: clamp(34px, 4vw, 48px);
+  font-size: 48px;
   line-height: 1.2;
   font-weight: 600;
 }
@@ -940,25 +948,18 @@ textarea {
 }
 .testimonial-card {
   text-align: center;
-  padding: 0 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.testimonial-text-small,
-.testimonial-text-main {
-  width: 100%;
-  max-width: 680px;
-  margin: 0 auto 24px;
-  text-align: center;
-}
+
 /* text nhỏ phía trên */
 .testimonial-text-small {
-  color: var(--text-body);
-  font-size: 16px;
-  line-height: 1.7;
+  color: #87909d;
+  font-size: 18px;
+  line-height: 1.4;
   max-width: 600px;
   margin: 0 auto 24px;
  align-items: center;
@@ -967,14 +968,13 @@ textarea {
 
 /* quote chính */
 .testimonial-text-main {
-  color: var(--text-main);
-  font-size: 20px;
+  color: oklch(21% .006 285.885);
+  font-size: 18px;
   line-height: 1.8;
   font-weight: 400;
 width: 100%;  
-  max-width: 700px;
-  margin: 0 auto 32px;
   text-align: center;
+  padding-top: 32px;
 }
 
 /* author */
@@ -996,7 +996,7 @@ width: 100%;
 ========================= */
 .contact-section {
   position: relative;
-  bottom: -76px;
+  bottom: -60px;
   padding: 0 8px;
   margin-top: -60px;
   z-index: 5;
@@ -1176,7 +1176,6 @@ width: 100%;
 .contact-form-submit {
   width: 100%;
   display: flex;
-  justify-content: center;
 }
 .section-title-mobile {
   display: none;
@@ -1186,7 +1185,6 @@ width: 100%;
 ========================= */
 .site-footer {
   background: #2a374a;
-  padding-top: 80px;
   color: #fff;
 }
 
@@ -1197,6 +1195,7 @@ width: 100%;
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
+  padding: 160px 0 0;
 }
 
 .footer-nav {
@@ -1214,7 +1213,7 @@ width: 100%;
 
 .footer-bottom {
   text-align: center;
-  padding: 28px 0 40px;
+  padding: 24px 0;
 }
 
 /* =========================
@@ -1269,6 +1268,7 @@ width: 100%;
 .clients-slider .slick-list,
 .testimonial-slider .slick-list {
   margin: 0 -12px;
+  height: 301;
 }
 
 .blog-slider .slick-list {
