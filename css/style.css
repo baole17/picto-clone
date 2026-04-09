@@ -649,7 +649,7 @@ textarea {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(540px, 648px);
   align-items: center;
-  padding: 250px 8px 150px;
+  padding: 260px 8px 140px;
 }
 
 .process-content {
