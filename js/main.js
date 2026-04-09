@@ -177,3 +177,12 @@ $(document).ready(function () {
   wrapper.addEventListener('touchstart', function () { paused = true; }, { passive: true });
   wrapper.addEventListener('touchend', function () { paused = false; }, { passive: true });
 })();
+document.addEventListener('click', function(e) {
+  if (navMobile && navMobile.classList.contains('show')) {
+    const isClickInsideNav = navMobile.contains(e.target);
+    const isClickOnToggle = menuToggle.contains(e.target);
+    if (!isClickInsideNav && !isClickOnToggle) {
+      navMobile.classList.remove('show');
+    }
+  }
+});
