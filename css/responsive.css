@@ -629,6 +629,11 @@
     font-size: 15px;
     padding-top: 0;
   }
+    .header-right .btn-primary {
+    font-size: 14px !important;
+    min-height: 36px;
+    padding: 0 14px;
+  }
 
   .testimonial-text-small {
     font-size: 13px;
